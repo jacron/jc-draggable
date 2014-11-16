@@ -1,5 +1,5 @@
-draggable
-=========
+jc-draggable
+============
 jcDraggable is a directive for dragging objects in angular.
 
 usage-example: 
