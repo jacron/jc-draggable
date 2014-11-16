@@ -3,7 +3,7 @@
 /*
  * jcDraggable
  * Directive for dragging an element.
- * Parameters (optional): startposition(x, y), orientation(SE or NW)
+ * Parameters (optional): startposition(x, y), orientation(SE,NW, SW, NE)
  * orientation NW: from the top left
  * orientation NE: from the top right
  * orientation SW: from the bottom left
