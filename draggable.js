@@ -57,7 +57,6 @@ angular.module('jcDirectives', []).
                                 throw 'jcDraggable: invalid orientation (NE,NW,SW,SE): '
                                         + orientation;
                         }
-                        console.log(orientation);
                     }
                     elm.css({cursor: 'move'});
                     obj.css({position:'fixed'});
