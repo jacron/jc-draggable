@@ -2,7 +2,7 @@
 	"name": "jc-draggable",
 	"version": "0.1",
 	"dependencies": {
-		"jquery": ">=1.10",
+		"jquery": "~1.10",
 		"angular": "~1.2.1"
 	}
 }
