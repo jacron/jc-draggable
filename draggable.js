@@ -1,9 +1,11 @@
 'use strict';
 
 /*
+version 0.2
+
  * jcDraggable
  * Directive for dragging an element.
- * Parameters (optional): startposition(x, y), orientation(SE,NW, SW, NE)
+ * Parameters (optional): startposition(x, y), orientation(SE or NW)
  * orientation NW: from the top left
  * orientation NE: from the top right
  * orientation SW: from the bottom left
@@ -17,8 +19,8 @@ angular.module('jcDirectives', []).
                 link: function (scope, elm, attr) {
                     var startX,
                             startY,
-                            x = 0,
-                            y = 0,
+                            x,  // undefined
+                            y,  // undefined
                             draggableParms = attr['jcDraggable'],
                             draggableObject = attr['jcDraggableObject'],
                             obj = elm,
@@ -28,8 +30,8 @@ angular.module('jcDirectives', []).
                         obj = angular.element(draggableObject);
                     }
                     if (draggableParms) {
-                        var parms = draggableParms.split(','),
-                                css = {};
+                        var parms = draggableParms.split(',');
+                        console.log(parms);
 
                         x = parms[0];
                         y = parms[1];
@@ -64,6 +66,11 @@ angular.module('jcDirectives', []).
                     elm.on('mousedown', function (event) {
                         // Prevent default dragging of selected content
                         event.preventDefault();
+
+                        var offset = obj.offset();
+                        x = offset.left;
+                        y = offset.top;
+
                         switch (orientation) {
                             case 'NW':
                                 startX = event.screenX - x;
